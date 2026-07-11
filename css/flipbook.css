@@ -1,0 +1,278 @@
+/* ===================================================
+   FLIPBOOK.CSS
+   Estilo do livro (StPageFlip)
+=================================================== */
+
+/* Container principal */
+
+.book-container{
+    perspective:2500px;
+}
+
+/* Livro */
+
+#livro{
+    position:relative;
+    width:420px;
+    height:700px;
+    max-width:100%;
+    max-height:90vh;
+    margin:auto;
+}
+
+/* Área criada pela biblioteca */
+
+.stf__parent{
+    width:100%;
+    height:100%;
+}
+
+/* Livro */
+
+.stf__wrapper{
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.35);
+    border-radius:8px;
+}
+
+/* Página */
+
+.stf__item{
+
+    background:#fff;
+    overflow:hidden;
+
+}
+
+/* Face da página */
+
+.pagina{
+
+    width:100%;
+    height:100%;
+    overflow:hidden;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:
+        linear-gradient(rgba(255,255,255,.06),rgba(255,255,255,.06)),
+        url("../img/papel.jpg");
+
+    background-size:cover;
+
+    position:relative;
+
+}
+
+/* Linha central */
+
+.pagina::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    bottom:0;
+
+    width:18px;
+
+    left:0;
+
+    background:
+    linear-gradient(
+        to right,
+        rgba(0,0,0,.18),
+        rgba(0,0,0,.04),
+        transparent
+    );
+
+}
+
+/* Página da direita */
+
+.stf__item.--right .pagina::before{
+
+    left:auto;
+    right:0;
+
+    background:
+    linear-gradient(
+        to left,
+        rgba(0,0,0,.18),
+        rgba(0,0,0,.04),
+        transparent
+    );
+
+}
+
+/* Sombras durante a dobra */
+
+.stf__outerShadow{
+
+    background:
+    rgba(0,0,0,.28);
+
+}
+
+.stf__innerShadow{
+
+    background:
+    rgba(0,0,0,.18);
+
+}
+
+/* Capa */
+
+.capa{
+
+    background:
+    linear-gradient(180deg,#f6f0df,#e7d7b5);
+
+}
+
+.capa::before{
+
+    display:none;
+
+}
+
+/* Contracapa */
+
+.ultima{
+
+    background:
+    linear-gradient(180deg,#f6f0df,#e7d7b5);
+
+}
+
+.ultima::before{
+
+    display:none;
+
+}
+
+/* Animações */
+
+.pagina section{
+
+    animation:fadeIn .5s ease;
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+        transform:translateY(12px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:none;
+
+    }
+
+}
+
+/* Numeração */
+
+.numero{
+
+    position:absolute;
+
+    bottom:18px;
+
+    left:0;
+    right:0;
+
+    text-align:center;
+
+    font-size:13px;
+
+    color:#888;
+
+}
+
+/* Cursor */
+
+.stf__item{
+
+    cursor:grab;
+
+}
+
+.stf__item:active{
+
+    cursor:grabbing;
+
+}
+
+/* Seleção */
+
+.stf__item *{
+
+    user-select:none;
+
+}
+
+/* Imagens */
+
+.pagina img{
+
+    transition:.4s;
+
+}
+
+.pagina img:hover{
+
+    transform:scale(1.02);
+
+}
+
+/* Galeria */
+
+.galeria{
+
+    width:100%;
+
+}
+
+/* Scroll interno caso algum texto seja muito grande */
+
+section{
+
+    width:100%;
+    height:100%;
+
+    overflow:auto;
+
+    padding-right:4px;
+
+}
+
+/* Barra de rolagem */
+
+section::-webkit-scrollbar{
+
+    width:5px;
+
+}
+
+section::-webkit-scrollbar-thumb{
+
+    background:#c9b184;
+    border-radius:10px;
+
+}
+
+section::-webkit-scrollbar-track{
+
+    background:transparent;
+
+}

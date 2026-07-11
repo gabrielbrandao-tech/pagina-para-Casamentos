@@ -1,0 +1,401 @@
+/* ==================================================
+   RESPONSIVE.CSS
+   Responsividade do Convite
+================================================== */
+
+/* Monitores muito grandes */
+
+@media (min-width: 1600px){
+
+    #livro{
+        width:520px;
+        height:820px;
+    }
+
+    .cover-content h1{
+        font-size:82px;
+    }
+
+    h2{
+        font-size:48px;
+    }
+
+    p{
+        font-size:20px;
+    }
+
+}
+
+
+/* Notebook */
+
+@media (max-width: 1400px){
+
+    #livro{
+        width:400px;
+        height:670px;
+    }
+
+}
+
+
+/* Tablets */
+
+@media (max-width: 992px){
+
+    body{
+        overflow:auto;
+    }
+
+    .book-container{
+
+        padding:15px;
+
+    }
+
+    #livro{
+
+        width:360px;
+        height:600px;
+
+    }
+
+    .pagina{
+
+        padding:28px;
+
+    }
+
+    .cover-content h1{
+
+        font-size:56px;
+
+    }
+
+    h2{
+
+        font-size:36px;
+
+    }
+
+    p{
+
+        font-size:17px;
+
+    }
+
+    iframe{
+
+        height:250px;
+
+    }
+
+}
+
+
+/* Celulares grandes */
+
+@media (max-width: 768px){
+
+    body{
+
+        overflow:auto;
+
+    }
+
+    .book-container{
+
+        padding:10px;
+
+    }
+
+    #livro{
+
+        width:100%;
+        max-width:360px;
+
+        height:560px;
+
+    }
+
+    .pagina{
+
+        padding:24px;
+
+    }
+
+    .cover-content h4{
+
+        font-size:20px;
+
+        margin-bottom:18px;
+
+    }
+
+    .cover-content h1{
+
+        font-size:52px;
+
+    }
+
+    .cover-content span{
+
+        font-size:28px;
+
+    }
+
+    .cover-content p{
+
+        font-size:16px;
+
+        margin:18px 0;
+
+    }
+
+    h2{
+
+        font-size:32px;
+
+        margin-bottom:18px;
+
+    }
+
+    p{
+
+        font-size:16px;
+
+        line-height:1.7;
+
+    }
+
+    img{
+
+        margin:15px 0;
+
+    }
+
+    iframe{
+
+        height:220px;
+
+    }
+
+    button,
+    .botao,
+    .confirmar{
+
+        width:100%;
+
+        padding:15px;
+
+        font-size:16px;
+
+    }
+
+    .galeria{
+
+        grid-template-columns:repeat(2,1fr);
+
+        gap:8px;
+
+    }
+
+    #musicButton{
+
+        width:46px;
+        height:46px;
+
+        top:15px;
+        right:15px;
+
+        font-size:18px;
+
+    }
+
+}
+
+
+/* Celulares pequenos */
+
+@media (max-width: 480px){
+
+    #livro{
+
+        width:100%;
+
+        max-width:320px;
+
+        height:510px;
+
+    }
+
+    .pagina{
+
+        padding:18px;
+
+    }
+
+    .cover-content h4{
+
+        font-size:18px;
+
+    }
+
+    .cover-content h1{
+
+        font-size:44px;
+
+    }
+
+    .cover-content span{
+
+        font-size:24px;
+
+    }
+
+    .cover-content p{
+
+        font-size:15px;
+
+    }
+
+    h2{
+
+        font-size:28px;
+
+    }
+
+    p{
+
+        font-size:15px;
+
+    }
+
+    iframe{
+
+        height:180px;
+
+    }
+
+    .galeria{
+
+        gap:6px;
+
+    }
+
+}
+
+
+/* Celulares muito pequenos */
+
+@media (max-width: 360px){
+
+    #livro{
+
+        max-width:290px;
+
+        height:470px;
+
+    }
+
+    .pagina{
+
+        padding:15px;
+
+    }
+
+    .cover-content h1{
+
+        font-size:38px;
+
+    }
+
+    .cover-content h4{
+
+        font-size:16px;
+
+    }
+
+    .cover-content span{
+
+        font-size:22px;
+
+    }
+
+    h2{
+
+        font-size:24px;
+
+    }
+
+    p{
+
+        font-size:14px;
+
+    }
+
+    iframe{
+
+        height:160px;
+
+    }
+
+}
+
+
+/* Ajuste para telas baixas */
+
+@media (max-height: 720px){
+
+    #livro{
+
+        height:90vh;
+
+    }
+
+}
+
+
+/* Modo paisagem em celulares */
+
+@media (max-height: 500px) and (orientation: landscape){
+
+    body{
+
+        overflow:auto;
+
+    }
+
+    #livro{
+
+        width:700px;
+
+        height:430px;
+
+    }
+
+    .pagina{
+
+        padding:18px;
+
+    }
+
+    h2{
+
+        font-size:26px;
+
+    }
+
+    p{
+
+        font-size:14px;
+
+    }
+
+    iframe{
+
+        height:150px;
+
+    }
+
+}

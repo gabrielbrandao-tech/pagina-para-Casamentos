@@ -1,0 +1,330 @@
+/* ======================================================
+   ANIMATIONS.CSS
+   Animações do Convite
+====================================================== */
+
+
+/* Fade */
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity:1;
+    }
+
+}
+
+/* Subindo */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+        transform:translateY(35px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+/* Zoom */
+
+@keyframes zoomIn{
+
+    from{
+
+        opacity:0;
+        transform:scale(.88);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:scale(1);
+
+    }
+
+}
+
+/* Flutuar */
+
+@keyframes float{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-8px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* Pulsar */
+
+@keyframes pulse{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.05);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+
+/* ======================================================
+   PÉTALAS
+====================================================== */
+
+@keyframes petalFall{
+
+    0%{
+
+        transform:
+            translateY(-120px)
+            rotate(0deg)
+            scale(.7);
+
+        opacity:0;
+
+    }
+
+    10%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:
+            translateY(115vh)
+            rotate(540deg)
+            scale(1.1);
+
+        opacity:0;
+
+    }
+
+}
+
+@keyframes petalSwing{
+
+    0%{
+
+        margin-left:0;
+
+    }
+
+    25%{
+
+        margin-left:25px;
+
+    }
+
+    50%{
+
+        margin-left:-20px;
+
+    }
+
+    75%{
+
+        margin-left:20px;
+
+    }
+
+    100%{
+
+        margin-left:0;
+
+    }
+
+}
+
+
+/* ======================================================
+   CLASSES DE ANIMAÇÃO
+====================================================== */
+
+.fade-up{
+
+    animation:fadeUp .8s ease both;
+
+}
+
+.zoom{
+
+    animation:zoomIn .8s ease both;
+
+}
+
+.float{
+
+    animation:float 5s ease-in-out infinite;
+
+}
+
+.pulse{
+
+    animation:pulse 3s infinite;
+
+}
+
+
+/* ======================================================
+   ELEMENTOS
+====================================================== */
+
+body{
+
+    animation:fadeIn 1s;
+
+}
+
+.cover-content{
+
+    animation:fadeUp 1s;
+
+}
+
+.cover-content h1{
+
+    animation:zoomIn 1.2s;
+
+}
+
+.cover-content span{
+
+    animation:pulse 4s infinite;
+
+}
+
+section{
+
+    animation:fadeUp .7s;
+
+}
+
+img{
+
+    transition:
+        transform .4s,
+        box-shadow .4s;
+
+}
+
+img:hover{
+
+    transform:scale(1.03);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.18);
+
+}
+
+button,
+.botao,
+.confirmar{
+
+    transition:
+        .35s;
+
+}
+
+button:hover,
+.botao:hover,
+.confirmar:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.18);
+
+}
+
+button:active,
+.botao:active,
+.confirmar:active{
+
+    transform:scale(.97);
+
+}
+
+#musicButton{
+
+    animation:float 4s ease-in-out infinite;
+
+}
+
+
+/* ======================================================
+   PÉTALAS
+====================================================== */
+
+.petal{
+
+    position:fixed;
+
+    top:-80px;
+
+    width:28px;
+
+    height:28px;
+
+    background-size:contain;
+
+    background-repeat:no-repeat;
+
+    pointer-events:none;
+
+    z-index:2;
+
+    opacity:0;
+
+    animation:
+
+        petalFall linear forwards,
+
+        petalSwing ease-in-out infinite;
+
+    filter:
+
+        drop-shadow(0 3px 6px rgba(0,0,0,.18));
+
+}
