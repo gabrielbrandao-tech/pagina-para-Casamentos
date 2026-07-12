@@ -1,8 +1,3 @@
-/* ===================================================
-   APP.JS
-   Funções gerais do convite
-=================================================== */
-
 document.addEventListener("DOMContentLoaded", () => {
 
     criarPetalas();
@@ -12,9 +7,9 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-/* ===================================================
+/* =
    Revelar elementos
-=================================================== */
+= */
 
 function revelarConteudo() {
 
@@ -39,9 +34,9 @@ function revelarConteudo() {
 }
 
 
-/* ===================================================
+/* =
    Pétalas
-=================================================== */
+= */
 
 function criarPetalas() {
 
@@ -88,9 +83,9 @@ function criarPetalas() {
 }
 
 
-/* ===================================================
+/* =
    Zoom da galeria
-=================================================== */
+= */
 
 document.addEventListener("click",function(e){
 
@@ -117,9 +112,9 @@ document.addEventListener("click",function(e){
 });
 
 
-/* ===================================================
+/* =
    Botão voltar ao topo
-=================================================== */
+= */
 
 window.addEventListener("scroll",()=>{
 
@@ -136,9 +131,9 @@ window.addEventListener("scroll",()=>{
 });
 
 
-/* ===================================================
+/* =
    Smooth Scroll
-=================================================== */
+= */
 
 document.querySelectorAll('a[href^="#"]').forEach(link=>{
 
@@ -163,9 +158,9 @@ document.querySelectorAll('a[href^="#"]').forEach(link=>{
 });
 
 
-/* ===================================================
+/* =
    Redimensionamento
-=================================================== */
+=*/
 
 window.addEventListener("resize",()=>{
 

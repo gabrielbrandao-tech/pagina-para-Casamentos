@@ -1,8 +1,3 @@
-/* ==================================================
-   MUSIC.JS
-   Controle da música de fundo
-================================================== */
-
 const musica = document.getElementById("musica");
 const botaoMusica = document.getElementById("musicButton");
 const botaoAbrir = document.getElementById("abrirLivro");
@@ -13,9 +8,9 @@ let musicaIniciada = false;
 
 musica.volume = 0.4;
 
-/* ==========================================
+/* =
    Inicia a música ao abrir o convite
-========================================== */
+= */
 
 function iniciarMusica() {
 
@@ -49,9 +44,9 @@ if (botaoAbrir) {
 
 }
 
-/* ==========================================
+/* =
    Liga / Desliga
-========================================== */
+=*/
 
 botaoMusica.addEventListener("click", () => {
 
@@ -73,9 +68,9 @@ botaoMusica.addEventListener("click", () => {
 
 });
 
-/* ==========================================
+/* =
    Atualiza ícone
-========================================== */
+= */
 
 musica.addEventListener("play", () => {
 
@@ -89,9 +84,9 @@ musica.addEventListener("pause", () => {
 
 });
 
-/* ==========================================
+/* =
    Caso o navegador interrompa a música
-========================================== */
+= */
 
 document.addEventListener("visibilitychange", () => {
 

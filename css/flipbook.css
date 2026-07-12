@@ -1,8 +1,3 @@
-/* ===================================================
-   FLIPBOOK.CSS
-   Estilo do livro (StPageFlip)
-=================================================== */
-
 /* Container principal */
 
 .book-container{
@@ -243,7 +238,6 @@
 
 }
 
-/* Scroll interno caso algum texto seja muito grande */
 
 section{
 
