@@ -976,9 +976,19 @@
                         i = this.getMousePos(e.clientX, e.clientY);
                     let s = !1;
                     if (null !== this.touchPoint) {
-                        const t = i.x - this.touchPoint.point.x,
-                            e = Math.abs(i.y - this.touchPoint.point.y);
-                        Math.abs(t) > this.swipeDistance && e < 2 * this.swipeDistance && Date.now() - this.touchPoint.time < this.swipeTimeout && (t > 0 ? this.app.flipPrev(this.touchPoint.point.y < this.app.getRender().getRect().height / 2 ? "top" : "bottom") : this.app.flipNext(this.touchPoint.point.y < this.app.getRender().getRect().height / 2 ? "top" : "bottom"), s = !0), this.touchPoint = null
+                        const t = i.x - this.touchPoint.point.x;
+const e = i.y - this.touchPoint.point.y;
+
+// Se o gesto terminou sendo mais vertical,
+// não interpreta como troca de página.
+if (Math.abs(e) > Math.abs(t)) {
+    this.touchPoint = null;
+    this.app.userStop(i, false);
+    return;
+}
+
+Math.abs(t) > this.swipeDistance &&
+Math.abs(e) < 2 * this.swipeDistance && e < 2 * this.swipeDistance && Date.now() - this.touchPoint.time < this.swipeTimeout && (t > 0 ? this.app.flipPrev(this.touchPoint.point.y < this.app.getRender().getRect().height / 2 ? "top" : "bottom") : this.app.flipNext(this.touchPoint.point.y < this.app.getRender().getRect().height / 2 ? "top" : "bottom"), s = !0), this.touchPoint = null
                     }
                     this.app.userStop(i, s)
                 }
