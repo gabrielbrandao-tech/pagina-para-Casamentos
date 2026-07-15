@@ -86,7 +86,8 @@ body {
 = */
 
 /* Contêiner de conteúdo dentro de cada página */
-.cover-content, section {
+..cover-content,
+section {
     width: 100%;
     text-align: center;
     display: block;
@@ -100,13 +101,20 @@ h2 {
     margin-bottom: 25px;
     margin-top: 0;
     color: #8b6b2d;
+
+    text-align: center;
 }
 
 /* Parágrafos e Texto */
-p {
+ p {
     font-size: 18px;
     line-height: 1.8;
     margin-bottom: 15px;
+
+    text-align: justify;
+    text-justify: inter-word;
+
+    width: 100%;
 }
 
 /* --- IMAGENS--- */

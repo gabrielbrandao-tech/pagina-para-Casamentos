@@ -910,44 +910,16 @@
                     const e = this.getMousePos(t.clientX, t.clientY);
                     this.app.startUserTouch(e), t.preventDefault()
                 }
-            }, tthis.onTouchStart = t => {
-
-    if (this.checkTarget(t.target) && t.changedTouches.length > 0) {
-
-        const e = t.changedTouches[0];
-        const i = this.getMousePos(e.clientX, e.clientY);
-
-        // Permite iniciar o flip apenas nas bordas
-        const largura = this.app.getRender().getRect().width;
-
-        if (
-            i.x > largura * 0.20 &&
-            i.x < largura * 0.80
-        ) {
-            this.touchPoint = null;
-            return;
-        }
-
-        this.touchPoint = {
-            point: i,
-            time: Date.now()
-        };
-
-        setTimeout(() => {
-
-            if (this.touchPoint !== null) {
-                this.app.startUserTouch(i);
-            }
-
-        }, this.swipeTimeout);
-
-        if (!this.app.getSettings().mobileScrollSupport) {
-            t.preventDefault();
-        }
-
-    }
-
-}, this.swipeTimeout), this.app.getSettings().mobileScrollSupport || t.preventDefault()
+            }, this.onTouchStart = t => {
+                if (this.checkTarget(t.target) && t.changedTouches.length > 0) {
+                    const e = t.changedTouches[0],
+                        i = this.getMousePos(e.clientX, e.clientY);
+                    this.touchPoint = {
+                        point: i,
+                        time: Date.now()
+                    }, setTimeout(() => {
+                        null !== this.touchPoint && this.app.startUserTouch(i)
+                    }, this.swipeTimeout), this.app.getSettings().mobileScrollSupport || t.preventDefault()
                 }
             }, this.onMouseUp = t => {
                 const e = this.getMousePos(t.clientX, t.clientY);
@@ -956,97 +928,24 @@
                 const e = this.getMousePos(t.clientX, t.clientY);
                 this.app.userMove(e, !1)
             }, this.onTouchMove = t => {
-
-    if (t.changedTouches.length > 0) {
-
-        const e = t.changedTouches[0];
-        const i = this.getMousePos(e.clientX, e.clientY);
-
-        if (this.touchPoint !== null) {
-
-            const dx = i.x - this.touchPoint.point.x;
-            const dy = i.y - this.touchPoint.point.y;
-
-            // Se o movimento for claramente vertical,
-            // cancela completamente o flip.
-            if (Math.abs(dy) > Math.abs(dx) + 30) {
-                this.touchPoint = null;
-                return;
-            }
-
-        }
-
-        if (this.app.getSettings().mobileScrollSupport) {
-
-            if (
-                this.touchPoint !== null &&
-                (
-                    Math.abs(this.touchPoint.point.x - i.x) > 35 ||
-                    this.app.getState() !== "read"
-                )
-            ) {
-                if (t.cancelable) {
-                    this.app.userMove(i, true);
+                if (t.changedTouches.length > 0) {
+                    const e = t.changedTouches[0],
+                        i = this.getMousePos(e.clientX, e.clientY);
+                    this.app.getSettings().mobileScrollSupport ? (null !== this.touchPoint && (Math.abs(this.touchPoint.point.x - i.x) > 10 || "read" !== this.app.getState()) && t.cancelable && this.app.userMove(i, !0), "read" !== this.app.getState() && t.preventDefault()) : this.app.userMove(i, !0)
                 }
-            }
-
-            if (this.app.getState() !== "read") {
-                t.preventDefault();
-            }
-
-        } else {
-
-            this.app.userMove(i, true);
-
-        }
-
-    }
-
-}, this.onTouchEnd = t => {
-    if (t.changedTouches.length > 0) {
-
-        const e = t.changedTouches[0];
-        const i = this.getMousePos(e.clientX, e.clientY);
-
-        let s = false;
-
-        if (this.touchPoint !== null) {
-
-            const t = i.x - this.touchPoint.point.x;
-            const e = i.y - this.touchPoint.point.y;
-
-            // Se o usuário estava rolando verticalmente,
-            // não vira a página.
-            if (Math.abs(e) > Math.abs(t) + 30) {
-                this.touchPoint = null;
-                this.app.userStop(i, false);
-                return;
-            }
-
-            Math.abs(t) > this.swipeDistance &&
-            Math.abs(e) < 40 &&
-            Date.now() - this.touchPoint.time < this.swipeTimeout &&
-            (
-                t > 0
-                    ? this.app.flipPrev(
-                        this.touchPoint.point.y < this.app.getRender().getRect().height / 2
-                            ? "top"
-                            : "bottom"
-                    )
-                    : this.app.flipNext(
-                        this.touchPoint.point.y < this.app.getRender().getRect().height / 2
-                            ? "top"
-                            : "bottom"
-                    ),
-                s = true
-            );
-
-            this.touchPoint = null;
-        }
-
-        this.app.userStop(i, s);
-    }
-}, t.classList.add("stf__parent"), t.insertAdjacentHTML("afterbegin", '<div class="stf__wrapper"></div>'), this.wrapper = t.querySelector(".stf__wrapper"), this.app = e;
+            }, this.onTouchEnd = t => {
+                if (t.changedTouches.length > 0) {
+                    const e = t.changedTouches[0],
+                        i = this.getMousePos(e.clientX, e.clientY);
+                    let s = !1;
+                    if (null !== this.touchPoint) {
+                        const t = i.x - this.touchPoint.point.x,
+                            e = Math.abs(i.y - this.touchPoint.point.y);
+                        Math.abs(t) > this.swipeDistance && e < 2 * this.swipeDistance && Date.now() - this.touchPoint.time < this.swipeTimeout && (t > 0 ? this.app.flipPrev(this.touchPoint.point.y < this.app.getRender().getRect().height / 2 ? "top" : "bottom") : this.app.flipNext(this.touchPoint.point.y < this.app.getRender().getRect().height / 2 ? "top" : "bottom"), s = !0), this.touchPoint = null
+                    }
+                    this.app.userStop(i, s)
+                }
+            }, t.classList.add("stf__parent"), t.insertAdjacentHTML("afterbegin", '<div class="stf__wrapper"></div>'), this.wrapper = t.querySelector(".stf__wrapper"), this.app = e;
             const s = this.app.getSettings().usePortrait ? 1 : 2;
             t.style.minWidth = i.minWidth * s + "px", t.style.minHeight = i.minHeight + "px", "fixed" === i.size && (t.style.minWidth = i.width * s + "px", t.style.minHeight = i.height + "px"), i.autoSize && (t.style.width = "100%", t.style.maxWidth = 2 * i.maxWidth + "px"), t.style.display = "block", window.addEventListener("resize", this.onResize, !1), this.swipeDistance = i.swipeDistance
         }
