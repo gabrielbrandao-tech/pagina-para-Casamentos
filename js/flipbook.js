@@ -1,3 +1,7 @@
+/* ==================================================
+   FLIPBOOK.JS
+================================================== */
+
 let pageFlip;
 
 /* Inicializa */
@@ -33,7 +37,7 @@ function iniciarLivro() {
 
         useMouseEvents: true,
 
-        swipeDistance: 150,
+        swipeDistance: 30,
 
         showPageCorners: true,
 
