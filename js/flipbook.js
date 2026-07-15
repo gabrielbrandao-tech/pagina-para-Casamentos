@@ -33,17 +33,17 @@ function iniciarLivro() {
 
         showCover: true,
 
-        mobileScrollSupport: true,
+        mobileScrollSupport: false,
 
         useMouseEvents: true,
 
-        swipeDistance: 30,
+        swipeDistance: 100,
 
         showPageCorners: true,
 
         drawShadow: true,
 
-        flippingTime: 900,
+        flippingTime: 1200,
 
         startPage: 0,
 
