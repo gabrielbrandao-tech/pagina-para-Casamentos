@@ -43,7 +43,7 @@ function iniciarLivro() {
 
         drawShadow: true,
 
-        flippingTime: 1000,
+        flippingTime: 1100,
 
         startPage: 0,
 
