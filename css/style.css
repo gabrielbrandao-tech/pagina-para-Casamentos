@@ -675,3 +675,10 @@ margin: -5px auto 20px;
 }
 
 }
+
+/* celular Forca o balao a aparecer */
+.manual-item.active .manual-popup {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important; /* Permite interagir com o texto/botões dentro do balão */
+}

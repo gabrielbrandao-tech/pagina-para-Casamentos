@@ -202,3 +202,30 @@ function paginaAnterior() {
     pageFlip.flipPrev();
 
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    const itens = document.querySelectorAll(".manual-item");
+
+    itens.forEach(item => {
+        item.addEventListener("click", function(e) {
+            // Se o usuário clicar no popup em si, não fecha
+            if (e.target.closest(".manual-popup")) return;
+
+            // Fecha outros popups que estiverem abertos
+            itens.forEach(outroItem => {
+                if (outroItem !== item) outroItem.classList.remove("active");
+            });
+
+            // Ativa/Desativa o popup clicado
+            this.classList.toggle("active");
+            
+            // Impede propagação para não fechar imediatamente no clique do documento
+            e.stopPropagation();
+        });
+    });
+
+    // Se o convidado clicar fora de qualquer ícone, o balão fecha
+    document.addEventListener("click", function() {
+        itens.forEach(item => item.classList.remove("active"));
+    });
+});
