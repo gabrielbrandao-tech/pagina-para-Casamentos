@@ -86,7 +86,7 @@ body {
 = */
 
 /* Contêiner de conteúdo dentro de cada página */
-..cover-content,
+cover-content,
 section {
     width: 100%;
     text-align: center;
@@ -310,4 +310,27 @@ button:hover, .botao:hover, .confirmar:hover {
     #contador span {
         font-size: 16px;
     }
+}
+
+.textoluademel {
+    font-size: 0.9em;
+    color: #555;
+    margin-bottom: 15px;
+    margin: -25px auto 20px;
+}
+.pix{
+    text-align: center; 
+    padding: 10px;
+     background-color:
+      #fdf5e6;
+       border-radius: 15px;
+}
+.textopix{
+text-align: center;
+padding: 10px; 
+background-color:
+#fdf5e6; 
+border-radius: 15px;
+max-width: 250px;
+margin: -5px auto 20px;
 }

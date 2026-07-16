@@ -1,6 +1,6 @@
-/* ==================================================
+/* =
    FLIPBOOK.JS
-================================================== */
+=*/
 
 let pageFlip;
 
@@ -33,7 +33,7 @@ function iniciarLivro() {
 
         showCover: true,
 
-        mobileScrollSupport: true,
+        mobileScrollSupport: false,
 
         useMouseEvents: true,
 
