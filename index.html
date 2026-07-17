@@ -295,38 +295,37 @@ document.addEventListener("DOMContentLoaded", function () {
 
             </div>
 
-            <!-- penultimapagina contador e maps -->
+            <!-- penultimapagina contador  -->
 
-            <div class="pagina">
-                <section>
-                    <h2>Nosso Grande Dia</h2>
-                    <p>Faltam apenas...</p>
-                    <div id="contador">
-                        <div><span id="dias">0</span><small>Dias</small></div>
-                        <div><span id="horas">00</span><small>Horas</small></div>
-                        <div><span id="minutos">00</span><small>Minutos</small></div>
-                        <div><span id="segundos">00</span><small>Segundos</small></div>
-                    </div>
-                    <section>
-                        <br><br>
-        <h2>Localização</h2>
-        
-        <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3652.756611413158!2d-46.54263052467299!3d-23.78403007869666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce415d487f34f7%3A0xb35359c11894d039!2sEstr.%20dos%20Camponeses%2C%20600%20-%20Finco%2C%20S%C3%A3o%20Bernardo%20do%20Campo%20-%20SP%2C%2009831-690!5e0!3m2!1spt-BR!2sbr!4v1715694205494!5m2!1spt-BR!2sbr" 
-            width="100%" 
-            height="320" 
-            style="border:0;" 
-            allowfullscreen="" 
-            loading="lazy">
-        </iframe>
+<div class="pagina">
+    <section class="contador-container">
+        <h2>Nosso Grande Dia</h2>
+        <h3>faltam apenas...</h3>
 
-        <a class="botao" href="https://www.google.com/maps/dir/?api=1&destination=Estr.+dos+Camponeses,+600+-+Finco,+S%C3%A3o+Bernardo+do+Campo+-+SP" target="_blank">
-            Como Chegar
-        </a>
-        </section>
-                </section>
-                
+
+        <div class="contador-grid">
+            <div class="contador-box">
+                <span id="dias">0</span>
+                <small>DIAS</small>
             </div>
+
+            <div class="contador-box">
+                <span id="horas">00</span>
+                <small>HORAS</small>
+            </div>
+
+            <div class="contador-box">
+                <span id="minutos">00</span>
+                <small>MINUTOS</small>
+            </div>
+
+            <div class="contador-box">
+                <span id="segundos">00</span>
+                <small>SEGUNDOS</small>
+            </div>
+        </div>
+    </section>
+</div>
 
             <!-- Ultima pagina confirmacao de presenca e presentes -->
             
@@ -374,6 +373,8 @@ Elaine & Ronaldo 🤍
     </script>
 </div>
 
+        <!-- confirmacao de presenca e maps -->
+
         <div class="pagina">
             <section>
                    <h2>Esperamos Você!</h2>
@@ -382,6 +383,21 @@ Elaine & Ronaldo 🤍
         <a class="confirmar" href="https://docs.google.com/forms/d/e/1FAIpQLSfpDuJtVj5-di-BNLXih-0tXc3ZUyMyx7oql--Z9ACCbp3-jw/viewform?usp=publish-editor" target="_blank">Confirmar Presença</a>
 
         <hr style="margin: 30px 0; border: 0; border-top: 1px solid #e0e0e0;">
+
+        <h2>Localização</h2>
+        
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3652.756611413158!2d-46.54263052467299!3d-23.78403007869666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce415d487f34f7%3A0xb35359c11894d039!2sEstr.%20dos%20Camponeses%2C%20600%20-%20Finco%2C%20S%C3%A3o%20Bernardo%20do%20Campo%20-%20SP%2C%2009831-690!5e0!3m2!1spt-BR!2sbr!4v1715694205494!5m2!1spt-BR!2sbr" 
+            width="100%" 
+            height="320" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy">
+        </iframe>
+
+        <a class="botao" href="https://www.google.com/maps/dir/?api=1&destination=Estr.+dos+Camponeses,+600+-+Finco,+S%C3%A3o+Bernardo+do+Campo+-+SP" target="_blank">
+            Como Chegar
+        </a>
 
                 </section>
 

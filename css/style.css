@@ -200,35 +200,50 @@ button:hover, .botao:hover, .confirmar:hover {
     font-size: 20px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
-#contador {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 20px;
+
+
+/* contador*/
+
+.contador-container {
+    text-align: center;
+    width: 100%;
+    overflow: hidden; 
+    padding: 10px 0;
 }
 
-#contador > div {
-    background: rgba(181, 139, 67, 0.1);
+.contador-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px; /* Espaço entre os cards */
+}
+
+.contador-box {
+    width: 45%; 
+    background: rgba(181, 139, 67, 0.05);
     border: 1px solid #b58b43;
-    padding: 10px;
     border-radius: 8px;
-    min-width: 70px;
+    padding: 8px 2px;
     text-align: center;
 }
 
-#contador span {
+.contador-box span {
     display: block;
-    font-size: 24px;
-    font-weight: 600;
-    color: #8b6b2d;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #5d4037;
+    font-variant-numeric: tabular-nums;
 }
 
-#contador small {
-    font-size: 12px;
+.contador-box small {
+    display: block;
+    font-size: 8px;
+    letter-spacing: 0.5px;
+    color: #b58b43;
+    font-weight: 700;
     text-transform: uppercase;
-    color: #8b6b2d;
-    letter-spacing: 1px;
 }
+
 /* =
    ESTILO DA CAPA PERSONALIZADA
 = */
@@ -269,40 +284,7 @@ button:hover, .botao:hover, .confirmar:hover {
     background: #8f6b30;
     transform: translateX(-50%) translateY(-2px);
 }
-/* Container do contador */
-#contador {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    flex-wrap: wrap;
-    margin-top: 20px;
-    width: 100%;
-}
 
-/* Blocos individuais */
-#contador > div {
-    background: rgba(181, 139, 67, 0.1);
-    border: 1px solid #b58b43;
-    padding: 8px 5px;
-    border-radius: 8px;
-    flex: 1 1 60px;
-    max-width: 80px;
-    text-align: center;
-}
-
-/* Ajustes de fonte para não ficar grande demais no celular */
-#contador span {
-    display: block;
-    font-size: 18px;
-    font-weight: 600;
-    color: #8b6b2d;
-}
-
-#contador small {
-    font-size: 10px;
-    text-transform: uppercase;
-    color: #8b6b2d;
-}
 
 /* Media Query para telas muito pequenas */
 @media (max-width: 480px) {
